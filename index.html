@@ -6,7 +6,21 @@
     <meta name="keywords" content="HTML, CSS, JavaScript" />
     <meta name="author" content="DStudio Technology (David)" />
     <link rel="stylesheet" href="./css/main.css" />
-    <title>KaMa</title>
+            <title>KAMA</title> 
+        <link rel=" " type="image/png">
+        <script>
+            var titles = ["@K", "@Ka","@KaM", "@KaMa", "@KaM", "@Ka", "@K"]; // الأسماء التي تريد تغييرها
+            var index = 0;
+          
+            function changeTitle() {
+              document.title = titles[index]; // تعيين العنوان الحالي
+              index = (index + 1) % titles.length; // التحقق من الترتيب والانتقال إلى العنوان التالي
+              setTimeout(changeTitle, 300); // تغيير العنوان بسرعة (كل 100 ميلي ثانية)
+            }
+          
+            changeTitle(); // بدء تغيير العنوان
+        </script>
+
   </head>
   <body>
     <!-- Thanks for your support! -->
