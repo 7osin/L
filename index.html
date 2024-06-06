@@ -21,24 +21,35 @@
     <!-- Font Awesome Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!--  -->
-        <body onclick="playAudio()">
-            <audio id="audioPlayer" src="https://cdn.discordapp.com/attachments/1224889209119178773/1225924540123582464/Y2meta.app_-_-____2023___Ayed_-_Rdy_128_kbps.mp3?ex=66622e32&is=6660dcb2&hm=1012d83cc6f25f1e42b8eef0ca8a548d27a3ef3f3cf999484ec0ef7061d4ae61&"></audio>
-            
-            <script>
-                function playAudio() {
-                    var audio = document.getElementById('audioPlayer');
-                    var currentTime = sessionStorage.getItem('audioCurrentTime');
-                    if (currentTime) {
-                        audio.currentTime = parseFloat(currentTime);
-                    }
-                    audio.play();
-                }
-        
-                document.getElementById('audioPlayer').addEventListener('timeupdate', function () {
-                    var audio = document.getElementById('audioPlayer');
-                    sessionStorage.setItem('audioCurrentTime', audio.currentTime);
-                });
-            </script>
+    <audio id="audioPlayer" src="https://cdn.discordapp.com/attachments/1224889209119178773/1225924540123582464/Y2meta.app_-_-____2023___Ayed_-_Rdy_128_kbps.mp3?ex=66622e32&is=6660dcb2&hm=1012d83cc6f25f1e42b8eef0ca8a548d27a3ef3f3cf999484ec0ef7061d4ae61&"></audio>
+    
+    <script>
+        function playAudio() {
+            var audio = document.getElementById('audioPlayer');
+            var currentTime = sessionStorage.getItem('audioCurrentTime');
+            if (currentTime) {
+                audio.currentTime = parseFloat(currentTime);
+            }
+            audio.play();
+        }
+
+        // تشغيل الصوت عند تحميل الصفحة
+        window.onload = playAudio;
+
+        // حفظ وقت التشغيل الحالي عند مغادرة الصفحة
+        window.addEventListener('beforeunload', function () {
+            var audio = document.getElementById('audioPlayer');
+            sessionStorage.setItem('audioCurrentTime', audio.currentTime);
+        });
+
+        // تشغيل الصوت عند النقر على الشاشة
+        document.body.addEventListener('click', function () {
+            var audio = document.getElementById('audioPlayer');
+            if (audio.paused) {
+                audio.play();
+            }
+        });
+    </script>
             
     <!--  -->
 </head>
