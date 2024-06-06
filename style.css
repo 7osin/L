@@ -24,7 +24,7 @@ body {
 @media (max-width: 768px) {
     body {
         background-image: url('images/rt.png');
-        background-size: 110% 90%; /* يجعل الصورة ضعف حجم الحاوية لتظهر جزءاً محدداً منها */
+        background-size: 110% 100%; /* يجعل الصورة ضعف حجم الحاوية لتظهر جزءاً محدداً منها */
         background-repeat: no-repeat;
         background-position: top left; /* يحدد الجزء العلوي الأيسر من الصورة للعرض */
         margin: 0;
