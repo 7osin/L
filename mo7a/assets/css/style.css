@@ -252,7 +252,7 @@ h6 {
 @media (max-width: 768px) {
   #hero {
       background: url("../img/Phone_Banner.png") top center no-repeat;
-      background-size: 600px 855px; /* أو استخدم cover لتناسب الخلفية بكامل الحجم */
+      background-size: 600px 825px; /* أو استخدم cover لتناسب الخلفية بكامل الحجم */
   }
 }
 #hero:before {
