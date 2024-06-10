@@ -355,9 +355,7 @@ h3.my-profession {
   margin: 15px 0;
 }
 
-. {
-  color: var(--skin-color);
-}
+
 
 .home-info p {
   font-size: 20px;
@@ -1021,4 +1019,73 @@ h3.my-profession {
     opacity: 1;
   }
 }
+
+
+.iid {
+  color: #ff0000;
+  width: 100%; /* يجعل العرض يملأ الحاوية */
+  padding: 5px; /* يضيف حشوة داخلية */
+  border: 2px solid red; /* يضيف حدود حمراء */
+  border-radius: 11px; /* يضيف زوايا مستديرة */
+  font-size: 16px; /* يغير حجم الخط */
+  background-color: rgba(0, 0, 0, 0.0); /* يجعل الخلفية شفافة */
+  text-align: center; 
+}
+
+.iid:focus {
+  border-color: red; /* يغير لون الحدود عند التركيز */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* يغير ظل الصندوق عند التركيز */
+  color: red;
+  outline: none; /* يزيل الحدود الافتراضية عند التركيز */
+}
+
+.info-item p {
+  margin: 0; /* يزيل الهامش */
+}
+
+.info-item p {
+  margin: 0; /* يزيل الهامش */
+}
+
+.info-item p {
+  font-weight: bold; /* يجعل النص عريض */
+  font-size: 16px; /* يضبط حجم الخط */
+  font-family: Arial, sans-serif; /* يغير نوع الخط */
+}
+
+.info-item input[type="radio"] {
+  display: none; /* يخفي زر الراديو الافتراضي */
+}
+
+.info-item label {
+  cursor: pointer; /* يغير المؤشر إلى يد عند المرور فوق النص */
+  position: relative;
+  padding-left: 30px; /* يضيف مساحة على اليسار لزر الراديو المخصص */
+}
+
+.info-item label::before {
+  content: '\2713'; /* رمز علامة الصح */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: transparent; /* يجعل الرمز شفاف افتراضياً */
+  border: 2px solid red; /* يضيف حد أحمر */
+  border-radius: 10px; /* يضيف زوايا مستديرة */
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-item input[type="radio"]:checked + label::before {
+  color: red; /* يغير لون علامة الصح إلى الأحمر عند التحديد */
+}
+
+.info-item input[type="radio"]:checked + label {
+  color: red; /* يغير لون النص إلى الأحمر عند التحديد */
+}
+
 
