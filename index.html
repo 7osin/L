@@ -28,24 +28,28 @@
     }
   
     changeTitle(); // بدء تغيير العنوان
+ 
     
 </script>
 </head>
 <!-- VOCE -->
 <body onclick="playAudio()">
+
   <audio id="audioPlayer" src="images/VOCE.mp3"></audio>
+  
   <script>
+      var audioPlayed = false; // تعيين متغير لتتبع ما إذا تم تشغيل الصوت مسبقًا
+  
       function playAudio() {
-          var audio = document.getElementById('audioPlayer');
-          var currentTime = sessionStorage.getItem('audioCurrentTime');
-          audio.play();
+          if (!audioPlayed) { // تحقق مما إذا تم تشغيل الصوت مسبقًا أو لا
+              var audio = document.getElementById('audioPlayer');
+              audio.play();
+              audioPlayed = true; // قم بتحديث قيمة المتغير للإشارة إلى أن الصوت تم تشغيله مرة واحدة بالفعل
+          }
       }
-      document.getElementById('audioPlayer').addEventListener('timeupdate', function () {
-          var audio = document.getElementById('audioPlayer');
-          sessionStorage.setItem('audioCurrentTime', audio.currentTime);
-      });
   </script>
 <!--  -->
+
 <body class="dark">
   <canvas id="matrixCanvas"></canvas>
   <!-- Matrix -->
@@ -113,30 +117,20 @@
             <div class="about-content padd-15">
               <div class="row">
                 <div class="about-text padd-15">
-                  <h3> <span>اعادة تفعيل المفتاح&nbsp;&nbsp;</span></h3>
+                  <h3> <span>  يمكنك اعادة تفعيل المفتاح مره واحده خلال الاسبوع &nbsp;&nbsp;</span></h3>
                   <p>
-                   نسخة البرو والنسخه العاديه <br> يمكنك اعادة تفعيل المفتاح مره واحده خلال الاسبوع
+                 
                   </p>
                 </div>
               </div>
-              <style>
-                input[type="text"] {
-                    text-align: center;
-                    font-size: 20px; /* حجم الخط */
-                    color: red; /* لون الخط */
-                  }
-        input[type="text"]::placeholder {
-            color: red; /* لون النص الخاص بـ placeholder */
-        
-                }
-            </style>
+
               <div class="row">
                 <div class="personal-info padd-15">
                   <div class="row">
                     <div class="info-item padd-15">
-                      <p>
-                        <input type="text" name="name" id="name" placeholder="ادخل المفتاح هنا">
-                    </p>
+                      
+                        <input class="iid" type="text" name="name" id="name" placeholder="ادخل المفتاح هنا">
+                   
                     <div class="info-item padd-15">
 
                     </div>
@@ -147,7 +141,7 @@
                     <div class="info-item padd-15">
                       <p>
                         <input type="radio" name="version" id="regular_version" value="Regular">
-                        <label for="regular_version">  Regular</label>
+                        <label for="regular_version">النسخه العاديه</label>
                     </p>
                     </div>
       
@@ -155,7 +149,7 @@
                     <div class="info-item padd-15">
                       <p>
                         <input type="radio" name="version" id="pro_version" value="Pro">
-                        <label for="pro_version"> Pro </label>
+                        <label for="pro_version"> نسخة البرو </label>
                     </p>
                     </div>
 
@@ -163,17 +157,16 @@
                   <!-- REST KEY -->
                   <div class="row">
                     <div class="buttons padd-15">
-                       <a href="#" class="btn" onclick="ResetKey()">REST KEY</a>
+                       <a href="#" class="btn" onclick="ResetKey()">تفعيل</a>
                        <div id="notification" class="notification"></div>
-                      <a href="https://discord.gg/dlc" class="btn hire-me">Contact us now </a>
+                      <a href="https://f2kama.com" class="btn hire-me"> شـراء</a>
                     </div>
-                  </div>?
+                  </div>
                 </div>
                 <div class="skills padd-15">
                   <div class="row">
                     <div class="skills-item padd-15">
                       <h5> مستخدمين التول</h5>
-                     
                       </div>
                     </div>
                    
