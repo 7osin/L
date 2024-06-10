@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width">
+  <meta name="title" content=" KaMa WPS">
+  <meta name="image" content="https://cdn.discordapp.com/attachments/1191338107757416498/1247005356366762034/solders.png?ex=6667057d&is=6665b3fd&hm=1eb09a0ac7521b632f709a065525c86b938306bab5b50dcf8a2c568b80356b20&" alt=" https://cdn.discordapp.com/attachments/1191338107757416498/1247005356366762034/solders.png?ex=6667057d&is=6665b3fd&hm=1eb09a0ac7521b632f709a065525c86b938306bab5b50dcf8a2c568b80356b20&">
+  <meta name="description" content="KaMa WP ">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wick Portfolio</title>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/skins/color-red.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="css/style-switcher.css" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/wick.png" />
+  <script>
+    var titles = ["K", "Ka","KaM", "KaMa", "KaM", "Ka", "K"]; // الأسماء التي تريد تغييرها
+    var index = 0;
+  
+    function changeTitle() {
+      document.title = titles[index]; // تعيين العنوان الحالي
+      index = (index + 1) % titles.length; // التحقق من الترتيب والانتقال إلى العنوان التالي
+      setTimeout(changeTitle, 300); // تغيير العنوان بسرعة (كل 100 ميلي ثانية)
+    }
+  
+    changeTitle(); // بدء تغيير العنوان
+    
+</script>
+</head>
+<!-- VOCE -->
+<body onclick="playAudio()">
+  <audio id="audioPlayer" src=""></audio>
+  <script>
+      function playAudio() {
+          var audio = document.getElementById('audioPlayer');
+          var currentTime = sessionStorage.getItem('audioCurrentTime');
+          audio.play();
+      }
+      document.getElementById('audioPlayer').addEventListener('timeupdate', function () {
+          var audio = document.getElementById('audioPlayer');
+          sessionStorage.setItem('audioCurrentTime', audio.currentTime);
+      });
+  </script>
+<!--  -->
+<body class="dark">
+  <canvas id="matrixCanvas"></canvas>
+  <!-- Matrix -->
+  <script src="/js/matrix.js"></script>
+  <!-- Main Container Start -->
+  <div class="main-container">
+    <!-- Aside Start -->
+    <div class="aside">
+      <div class="logo">
+        <a href="index.html"><span>K</span>a<span>M</span>a</a>
+      </div>
+      <div class="nav-toggler">
+        <span></span>
+      </div>
+      <ul class="nav">
+        <li>
+          <a href="#home" class="active"><i class="fa fa-home"></i> Home</a>
+        </li>
+        <li>
+          <a href="#RESTKEY"><i class="fa fa-user"></i> REST KEY</a>
+        </li>
+        <li>
+          <a href="#education"><i class="fa fa-list"></i> Project</a>
+        </li>
+        <li>
+          <a href="#contact"><i class="fa fa-comments"></i> Contact</a>
+        </li>
+
+      </ul>
+    </div>
+    <!-- Aside End -->
+    <!-- Main Content Start -->
+    <div class="main-content">
+      <!-- Home Section Start -->
+      <section class="home active section" id="home">
+        <div class="container">
+          <div class="row">
+            <div class="home-info padd-15">
+              <h3 class="hello"> 
+                Hello, my name is <span class="name">KaMa</span>
+              </h3>
+              <h3 class="my-profession">
+                I'm a <span class="typing"></span>
+              </h3>
+              <p>Welcome to my World! As a software engineer, I specialize in cybersecurity and web solutions, fluent in C#, HTML, Node.js, CSS, JavaScript, Python, and TypeScript. I focus on creating tools for ethical hacking and advancing security practices, contributing to the tech community with open-source projects.</p>
+              <a href="https://discord.gg/dlc" class="btn">Join Discord Server</a>
+            </div>
+            <div class="home-img padd-15">
+              <img src="images/wick.png" alt="hero" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Home Section End -->
+
+      <!-- About Section Start -->
+      <section class="about section" id="RESTKEY">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>REST KEY</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="about-content padd-15">
+              <div class="row">
+                <div class="about-text padd-15">
+                  <h3> <span>اعادة تفعيل المفتاح&nbsp;&nbsp;</span></h3>
+                  <p>
+                   نسخة البرو والنسخه العاديه <br> يمكنك اعادة تفعيل المفتاح مره واحده خلال الاسبوع
+                  </p>
+                </div>
+              </div>
+              <style>
+                input[type="text"] {
+                    text-align: center;
+                    font-size: 20px; /* حجم الخط */
+                    color: red; /* لون الخط */
+                  }
+        input[type="text"]::placeholder {
+            color: red; /* لون النص الخاص بـ placeholder */
+        
+                }
+            </style>
+              <div class="row">
+                <div class="personal-info padd-15">
+                  <div class="row">
+                    <div class="info-item padd-15">
+                      <p>
+                        <input type="text" name="name" id="name" placeholder="ادخل المفتاح هنا">
+                    </p>
+                    <div class="info-item padd-15">
+
+                    </div>
+                  </div>
+
+                    </div>
+                    <!--  Regular -->
+                    <div class="info-item padd-15">
+                      <p>
+                        <input type="radio" name="version" id="regular_version" value="Regular">
+                        <label for="regular_version">  Regular</label>
+                    </p>
+                    </div>
+      
+                    <!-- PRO TOOL -->
+                    <div class="info-item padd-15">
+                      <p>
+                        <input type="radio" name="version" id="pro_version" value="Pro">
+                        <label for="pro_version"> Pro </label>
+                    </p>
+                    </div>
+
+
+                  <!-- REST KEY -->
+                  <div class="row">
+                    <div class="buttons padd-15">
+                       <a href="#" class="btn" onclick="ResetKey()">REST KEY</a>
+                       <div id="notification" class="notification"></div>
+                      <a href="https://discord.gg/dlc" class="btn hire-me">Contact us now </a>
+                    </div>
+                  </div>?
+                </div>
+                <div class="skills padd-15">
+                  <div class="row">
+                    <div class="skills-item padd-15">
+                      <h5> مستخدمين التول</h5>
+                     
+                      </div>
+                    </div>
+                   
+                  
+                    <div class="skills-item padd-15">
+                      <h5>DBD TOOLS</h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 80%"></div>
+                        <div class="skill-percent">80%</div>
+                      </div>
+                    </div>
+
+                    <div class="skills-item padd-15">
+                      <h5>DBD TOOLS PRO </h5>
+                      <div class="progress">
+                        <div class="progress-in" style="width: 60%"></div>
+                        <div class="skill-percent">60%</div>
+                      </div>
+                    </div>
+
+                    
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About Section End ----------------->
+
+      <!-- Educations & Experience Section Start -->
+      <section class="education section" id="education">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>Projects & program </h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="education padd-15">
+              <h3 class="title">Projects</h3>
+              <div class="row">
+                <div class="timeline-box padd-15">
+                  <div class="timeline shadow-dark">
+                    <!-- Timeline item -->
+                    <div class="timeline-item">
+                      <div class="circle-dot"></div>
+                      <h3 class="timeline-date">
+                        <i class='bx bxl-nodejs' ></i> صفحة تعريفيه
+                      </h3>
+                      <h4 class="timeline-title">
+                        <a href="https://wpd.sa/mo7a" target="_blank">MO7A</a>
+                      </h4>
+                      <p class="timeline-text">
+                       صفحه شخصيه تختصر جميع الروابط في رابط واحد بستايل جديد وابتكار جديد يجمع فيها جميع الروابط من منصات السوشل ميديا بشكل جذاب والوان متناسقه صممت هاذه الصفحه على الطـلـب 
+                      </p>
+                    </div>
+                    <!-- Timeline item -->
+                    <div class="timeline-item">
+                      <div class="circle-dot"></div>
+                      <h3 class="timeline-date">
+                        <i class='bx bxl-nodejs' ></i> صفحة تعريفيه رسميه
+                      </h3>
+                      <h4 class="timeline-title">
+                        <a href="https://wpd.sa/kama" target="_blank">Ryan</a>
+                      </h4>
+                      <p class="timeline-text">
+                        صفحة تعريفيه مختصره من المعلومات الخاصه رسميه بشكل جذاب والوان متناسقه
+                      </p>
+                    </div>
+                    <!-- Timeline item -->
+                    <div class="timeline-item">
+                      <div class="circle-dot"></div>
+                      <h3 class="timeline-date">
+                        <i class='bx bxl-nodejs' ></i> صفحة تعريفيهه ستايل wx2
+                      </h3>
+                      <h4 class="timeline-title">
+                        <a href="https://wpd.sa/t1" target="_blank">Rachel</a>
+                      </h4>
+                      <p class="timeline-text">
+                        صفحة تعريفيه مختصره من المعلومات الخاصه رسميه بشكل جذاب باللون الابيض والودري او اسود واحمر
+                      </p>
+                    </div>
+                    <!-- Timeline item -->
+
+                    <!-- Timeline item -->
+                    <div class="timeline-item">
+                      <div class="circle-dot"></div>
+                      <h3 class="timeline-date">
+                        <i class='bx bxl-nodejs' ></i> قريبا
+                      </h3>
+                      <h4 class="timeline-title">
+                        <a href="#" target="_blank">قريبا</a>
+                      </h4>
+                      <p class="timeline-text">
+                        لم تجهز بعد
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="experience padd-15">
+              <h3 class="title">program</h3>
+              <div class="row">
+                <div class="timeline-box padd-15">
+                  <div class="timeline shadow-dark">
+                    <!-- Timeline item -->
+                    <!-- Timeline item -->
+                    <!-- Timeline item -->
+                    <!-- Timeline item -->
+                    <div class="timeline-item">
+                      <div class="circle-dot"></div>
+                      <h3 class="timeline-date">
+                        <i class='bx bxl-nodejs' ></i> Dead by Daylight
+                      </h3>
+                      <h4 class="timeline-title">
+                        <a href="http://tools.nightmare.su/KAMA/KAMA.zip" target="_blank">download DBD TOOLS PRO</a>
+                      </h4>
+                      <p class="timeline-text">
+                        نسخة دبد برو تـول , اذا مافتح معك الرابط افتح الموقع من متصفح ثـاني
+                    </div>
+                    <!-- Timeline item -->
+                    <div class="timeline-item">
+                      <div class="circle-dot"></div>
+                      <h3 class="timeline-date">
+                        <i class='bx bxl-nodejs' ></i> Dead by Daylight
+                      </h3>
+                      <h4 class="timeline-title">
+                        <a href="http://tools.nightmare.su/KAMA/KAMA2.zip" target="_blank">download DBD TOOLS </a>
+                      </h4>
+                      <p class="timeline-text">
+                        نسخة دبد تولز العاديه , اذا مافتح معك الرابط افتح الموقع من متصفح ثـاني
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+      </section>
+      <!-- Educations & Experience Section End  -->           
+
+      <!-- Contact Section Start -->
+      <section class="contact section" id="contact">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>Contact Me</h2>
+            </div>
+          </div>
+          <h3 class="contact-title padd-15">Do You Have Any Questions?</h3>
+          <h4 class="contact-sub-title padd-15">Here's all my social media accounts</h4>
+          <div class="row">
+            <!-- Contact info item-->
+            <div class="contact-info-item padd-15">
+              <div class="icon"> <i class='bx bxl-snapchat'></i></div>
+              <h4>snapchat</h4>
+              <a href="https://github.com/wickstudio" target="_blank">
+                <p>Follow Me</p>
+              </a>
+            </div>  
+            <!-- Contact info item-->
+            <div class="contact-info-item padd-15">
+              <div class="icon"><i class='bx bxl-instagram'></i></div>
+              <h4>Instagram</h4>
+              <a href="https://www.instagram.com/9o12346" target="_blank">
+                <p>Follow me</p>
+              </a>
+            </div>
+            <!-- Contact info item-->
+            <div class="contact-info-item padd-15">
+              <i class='bx bxl-whatsapp'></i>
+              <h4>whatsapp</h4>
+              <a href="https://api.whatsapp.com/send/?phone=966598989422" target="_blank">
+                <p>Send me</p>
+              </a>
+            </div>
+            <!-- Contact info item-->
+            <div class="contact-info-item padd-15">
+              <i class='bx bxl-youtube' ></i>
+              <h4>Youtube</h4>
+              <a href="https://www.youtube.com/@KaMa-." target="_blank">
+                <p>Subscribe</p>
+              </a>
+            </div>
+            <!-- Contact info item-->
+            <div class="contact-info-item padd-15">
+              <i class='bx bx-x' ></i>
+              <h4>X</h4>
+              <a href="https://twitter.com/9o12345" target="_blank">
+                <p>Follow me</p>
+              </a>
+            </div>
+            <!-- Contact info item-->
+            <div class="contact-info-item padd-15">
+              <i class='bx bxl-discord-alt' ></i>
+              <h4>Discord</h4>
+              <a href="https://discord.com/invite/dlc" target="_blank">
+                <p>Join Server</p>
+              </a>
+            </div>
+            <!-- Contact info item-->
+            <div class="contact-info-item padd-15">
+              <i class='bx bxl-telegram' ></i>
+              <h4>Telegram</h4>
+              <a href="https://t.me/h3ck1" target="_blank">
+                <p>Add me</p>
+              </a>
+            </div>
+             <!-- Contact info item-->
+             <div class="contact-info-item padd-15">
+              <i class='bx bx-git-repo-forked' ></i>
+              <h4>my Store</h4>
+              <a href="https://f2kama.com" target="_blank">
+                <p>buy</p>
+              </a>
+            </div>
+          </div>
+          <h3 class="contact-title padd-15">SEND ME AN EMAIL</h3>
+          <h4 class="contact-sub-title padd-15">
+            I'M VERY RESPONSIVE TO MESSAGES
+          </h4>
+          <!-- Contact form -->
+          <div class="row">
+            <div class="contact-form padd-15">
+              <div class="row">
+                <div class="form-item col-6 padd-15">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Name" />
+                  </div>
+                </div>
+                <div class="form-item col-6 padd-15">
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-item col-12 padd-15">
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Subject" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-item col-12 padd-15">
+                  <div class="form-group">
+                    <textarea class="form-control" placeholder="Message"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-item col-12 padd-15">
+                  <div class="form-group">
+                    <button type="submit" class="btn">Send Message</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section End -->
+    <!-- Main Content End -->
+  </div>
+  <!-- Main Container End -->
+  <!-- Custom JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
+    referrerpolicy="no-referrer"></script>
+  <script src="js/script.js"></script>
+  <script src="js/hwid.js"></script>
+</body>
+
+</html>
