@@ -13,7 +13,7 @@ function ResetKey() {
   const key = document.getElementById('name').value;
   const version = document.querySelector('input[name="version"]:checked').value;
 
-  const url = `https://peacedeath.su/hwid/source/KAMA/reset.php?k=${encodeURIComponent(key)}&v=${encodeURIComponent(version)}`;
+  const url = ` https://dbdtools.su/hwid/source/KAMA/reset.php?k=${encodeURIComponent(key)}&v=${encodeURIComponent(version)}`;
 
   fetch(url)
     .then(response => {
