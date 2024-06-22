@@ -555,7 +555,7 @@ h3.my-profession {
   color: var(--text-black-700);
 }
 
-.about .about-content .timeline .timeline-date fa {
+.about .about-content .timeline .timeline-date  {
   margin-right: 5px;
 }
 
@@ -1088,4 +1088,23 @@ h3.my-profession {
   color: red; /* يغير لون النص إلى الأحمر عند التحديد */
 }
 
+
+.discord-iframe {
+  width: 97%;
+  height: 300px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  border: 1px solid #ff0000;
+  border-radius: 9px;
+}
+
+#users-title {
+  color: #ffffff;
+  font-size: 24px; /* حجم الخط */
+  font-weight: bold; /* خط عريض */
+  text-align: center; /* محاذاة النص في الوسط */
+  padding: 0px; /* هامش داخلي */
+  border-bottom: 1px solid #ff0000; /* خط أسفل العنوان */
+  width:  center ; /* عرض العنصر */
+}
 
