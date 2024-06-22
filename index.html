@@ -31,23 +31,11 @@
  
     
 </script>
+
 </head>
 <!-- VOCE -->
-<body onclick="playAudio()">
 
-  <audio id="audioPlayer" src="images/VOCE.mp3"></audio>
   
-  <script>
-      var audioPlayed = false; // تعيين متغير لتتبع ما إذا تم تشغيل الصوت مسبقًا
-  
-      function playAudio() {
-          if (!audioPlayed) { // تحقق مما إذا تم تشغيل الصوت مسبقًا أو لا
-              var audio = document.getElementById('audioPlayer');
-              audio.play();
-              audioPlayed = true; // قم بتحديث قيمة المتغير للإشارة إلى أن الصوت تم تشغيله مرة واحدة بالفعل
-          }
-      }
-  </script>
 <!--  -->
 
 <body class="dark">
@@ -69,17 +57,23 @@
           <a href="#home" class="active"><i class="fa fa-home"></i> Home</a>
         </li>
         <li>
-          <a href="#RESTKEY"><i class="fa fa-user"></i> RSET KEY</a>
+          <a href="#RESTKEY"><i class="fa fa-user"></i> Key Tool </a>
         </li>
         <li>
           <a href="#education"><i class="fa fa-list"></i> Project</a>
         </li>
         <li>
-          <a href="#contact"><i class="fa fa-comments"></i> Contact</a>
+          <a href="#contact"> <i class="fa fa-comments"></i> Contact</a>
+        </li>
+        <li>
+          <a onclick="toggleMute(event)" ><i class="fa fa-headphones" ></i> Mute </a>
         </li>
 
       </ul>
+
+      
     </div>
+  
     <!-- Aside End -->
     <!-- Main Content Start -->
     <div class="main-content">
@@ -100,8 +94,10 @@
             <div class="home-img padd-15">
               <img src="images/wick.png" alt="hero" />
             </div>
+            
           </div>
         </div>
+        
       </section>
       <!-- Home Section End -->
 
@@ -182,8 +178,8 @@
                     <div class="skills-item padd-15">
                       <h5>DBD TOOLS PRO </h5>
                       <div class="progress">
-                        <div class="progress-in" style="width: 60%"></div>
-                        <div class="skill-percent">60%</div>
+                        <div class="progress-in" style="width: 90%"></div>
+                        <div class="skill-percent">90%</div>
                       </div>
                     </div>
 
@@ -198,6 +194,40 @@
         </div>
       </section>
       <!-- About Section End ----------------->
+      
+<!--                                             صصصصصصصصصصصصصوووت                                                 -->
+<body onclick="playAudio()">
+  <audio id="audioPlayer" src="images/VOCE.mp3"></audio>
+  
+<script>
+  var audioPlayed = false; // تعيين متغير لتتبع ما إذا تم تشغيل الصوت مسبقًا
+  var isMuted = false; // تعيين متغير لتتبع ما إذا كان الصوت مكتومًا أم لا
+
+  function playAudio() {
+      if (!audioPlayed) { // تحقق مما إذا تم تشغيل الصوت مسبقًا أو لا
+          var audio = document.getElementById('audioPlayer');
+          audio.play();
+          audioPlayed = true; // قم بتحديث قيمة المتغير للإشارة إلى أن الصوت تم تشغيله مرة واحدة بالفعل
+      }
+  }
+
+  function toggleMute(event) {
+      event.preventDefault(); // منع التصرف الافتراضي للرابط
+      event.stopPropagation(); // منع تفعيل playAudio عند الضغط على زر الكتم
+      var audio = document.getElementById('audioPlayer');
+      var contactLink = document.getElementById('contactLink');
+      if (isMuted) {
+          audio.muted = false;
+          isMuted = false;
+
+          contactLink.innerText = 'Contact';
+      } else {
+          audio.muted = true;
+          isMuted = true;
+          contactLink.innerText = 'Muted';
+      }
+  }
+</script>    
 
       <!-- Educations & Experience Section Start -->
       <section class="education section" id="education">
@@ -333,21 +363,9 @@
           <h4 class="contact-sub-title padd-15">Here's all my social media accounts</h4>
           <div class="row">
             <!-- Contact info item-->
-            <div class="contact-info-item padd-15">
-              <div class="icon"> <i class='bx bxl-snapchat'></i></div>
-              <h4>snapchat</h4>
-              <a href="https://github.com/wickstudio" target="_blank">
-                <p>Follow Me</p>
-              </a>
-            </div>  
+
             <!-- Contact info item-->
-            <div class="contact-info-item padd-15">
-              <div class="icon"><i class='bx bxl-instagram'></i></div>
-              <h4>Instagram</h4>
-              <a href="https://www.instagram.com/9o12346" target="_blank">
-                <p>Follow me</p>
-              </a>
-            </div>
+
             <!-- Contact info item-->
             <div class="contact-info-item padd-15">
               <i class='bx bxl-whatsapp'></i>
@@ -356,22 +374,7 @@
                 <p>Send me</p>
               </a>
             </div>
-            <!-- Contact info item-->
-            <div class="contact-info-item padd-15">
-              <i class='bx bxl-youtube' ></i>
-              <h4>Youtube</h4>
-              <a href="https://www.youtube.com/@KaMa-." target="_blank">
-                <p>Subscribe</p>
-              </a>
-            </div>
-            <!-- Contact info item-->
-            <div class="contact-info-item padd-15">
-              <i class='bx bx-x' ></i>
-              <h4>X</h4>
-              <a href="https://twitter.com/9o12345" target="_blank">
-                <p>Follow me</p>
-              </a>
-            </div>
+
             <!-- Contact info item-->
             <div class="contact-info-item padd-15">
               <i class='bx bxl-discord-alt' ></i>
@@ -397,44 +400,7 @@
               </a>
             </div>
           </div>
-          <h3 class="contact-title padd-15">SEND ME AN EMAIL</h3>
-          <h4 class="contact-sub-title padd-15">
-            I'M VERY RESPONSIVE TO MESSAGES
-          </h4>
-          <!-- Contact form -->
-          <div class="row">
-            <div class="contact-form padd-15">
-              <div class="row">
-                <div class="form-item col-6 padd-15">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Name" />
-                  </div>
-                </div>
-                <div class="form-item col-6 padd-15">
-                  <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email" />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-item col-12 padd-15">
-                  <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Subject" />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-item col-12 padd-15">
-                  <div class="form-group">
-                    <textarea class="form-control" placeholder="Message"></textarea>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-item col-12 padd-15">
-                  <div class="form-group">
-                    <button type="submit" class="btn">Send Message</button>
-                  </div>
+         
                 </div>
               </div>
             </div>
