@@ -57,23 +57,22 @@
           <a href="#home" class="active"><i class="fa fa-home"></i> Home</a>
         </li>
         <li>
-          <a href="#RESTKEY"><i class="fa fa-user"></i> Key Tool </a>
+          <a href="#RESTKEY" ><i class="fa fa-user"></i> Key Tool </a>
         </li>
         <li>
           <a href="#education"><i class="fa fa-list"></i> Project</a>
         </li>
         <li>
           <a href="#contact"> <i class="fa fa-comments"></i> Contact</a>
-        </li>
-        <li>
-          <a onclick="toggleMute(event)" ><i class="fa fa-headphones" ></i> Mute </a>
+          <br>
+          <a href="#" onclick="toggleMute(event)"> <i class="fa fa-headphones"></i> Mute</a>
         </li>
 
-      </ul>
-
-      
-    </div>
   
+
+    </div>
+
+
     <!-- Aside End -->
     <!-- Main Content Start -->
     <div class="main-content">
@@ -199,35 +198,41 @@
 <body onclick="playAudio()">
   <audio id="audioPlayer" src="images/VOCE.mp3"></audio>
   
-<script>
-  var audioPlayed = false; // تعيين متغير لتتبع ما إذا تم تشغيل الصوت مسبقًا
-  var isMuted = false; // تعيين متغير لتتبع ما إذا كان الصوت مكتومًا أم لا
+  <ul>
+      <li>
+          <!-- الرابط الجديد للـ Mute مع تحديد href -->
+          <a href="mute.html" id="mute-button" onclick="toggleMute(event)">Mute</a>
+      </li>
+  </ul>
 
-  function playAudio() {
-      if (!audioPlayed) { // تحقق مما إذا تم تشغيل الصوت مسبقًا أو لا
+  <script>
+      var audioPlayed = false; // متغير لتتبع تشغيل الصوت
+      var isMuted = false; // متغير لتتبع حالة الصوت
+
+      function playAudio() {
+          if (!audioPlayed) { // تشغيل الصوت إذا لم يتم تشغيله بعد
+              var audio = document.getElementById('audioPlayer');
+              audio.play();
+              audioPlayed = true; // تحديث المتغير للإشارة إلى أن الصوت تم تشغيله
+          }
+      }
+
+      function toggleMute(event) {
+          event.preventDefault(); // منع سلوك الافتراضي للرابط
           var audio = document.getElementById('audioPlayer');
-          audio.play();
-          audioPlayed = true; // قم بتحديث قيمة المتغير للإشارة إلى أن الصوت تم تشغيله مرة واحدة بالفعل
+          var muteButton = document.getElementById('mute-button');
+          
+          if (isMuted) { // إلغاء كتم الصوت إذا كانت الصوت مكتومة
+              audio.muted = false;
+              isMuted = false;
+              muteButton.innerText = 'Mute'; // تحديث نص الزر إلى 'Mute'
+          } else { // كتم الصوت إذا كانت الصوت غير مكتومة
+              audio.muted = true;
+              isMuted = true;
+              muteButton.innerText = 'Unmute'; // تحديث نص الزر إلى 'Unmute'
+          }
       }
-  }
-
-  function toggleMute(event) {
-      event.preventDefault(); // منع التصرف الافتراضي للرابط
-      event.stopPropagation(); // منع تفعيل playAudio عند الضغط على زر الكتم
-      var audio = document.getElementById('audioPlayer');
-      var contactLink = document.getElementById('contactLink');
-      if (isMuted) {
-          audio.muted = false;
-          isMuted = false;
-
-          contactLink.innerText = 'Contact';
-      } else {
-          audio.muted = true;
-          isMuted = true;
-          contactLink.innerText = 'Muted';
-      }
-  }
-</script>    
+  </script>
 
       <!-- Educations & Experience Section Start -->
       <section class="education section" id="education">
