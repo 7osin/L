@@ -1,26 +1,48 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خطأ 404 - الصفحة غير موجودة</title>
-    <style>
-        body {
-            text-align: center;
-            padding: 50px;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            font-size: 50px;
-        }
-        p {
-            font-size: 20px;
-        }
-    </style>
+
+<meta name="theme-color" content="#ff0000"/>
+<meta property="og:title" content=" error 404 "/>
+<meta property="og:description" content=" error 404  "/>
+<meta property="og:image:type" content="image/gif"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+  <meta name="description" content=" error 404 ">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KaMa</title>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/skins/color-red.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="css/style-switcher.css" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/wick.png" />
+  <script>
+    var titles = ["K", "Ka","KaM", "KaMa", "KaM", "Ka", "K"]; // الأسماء التي تريد تغييرها
+    var index = 0; 
+    function changeTitle() {
+      document.title = titles[index]; // تعيين العنوان الحالي
+      index = (index + 1) % titles.length; // التحقق من الترتيب والانتقال إلى العنوان التالي
+      setTimeout(changeTitle, 300); // تغيير العنوان بسرعة (كل 100 ميلي ثانية)
+    }
+    changeTitle(); // بدء تغيير العنوان  
+</script>
 </head>
-<body>
-    <h1>404</h1>
-    <p>الصفحة التي تحاول الوصول إليها غير موجودة.</p>
-    <a href="/">العودة إلى الصفحة الرئيسية</a>
-</body>
+<body class="dark">
+  <canvas id="matrixCanvas"></canvas>
+  <!-- Matrix -->
+  <script src="/js/matrix.js"></script>
+  <!-- Main Container Start -->
+      <section class="home active section" id="home">
+        <div class="container">
+              <h3 class="hello" style="text-align: center;" > 
+                <span class="name">
+                            <a style="color: rgb(255, 255, 255);">ايووه وش جابك هنا 😄؟ <br></a>
+                            <a href="/" style="color: red;">شـكـلـك مـضـيع يـا الـغالـي العودة إلى الصفحة الرئيسية من هنا</a> <br>
+                            <a href="/" style="color: rgb(255, 255, 255);">←</a>
+                        </span>
+                    </h3>                    
+</body>          
 </html>
