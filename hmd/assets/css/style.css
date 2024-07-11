@@ -875,7 +875,7 @@ body::before {
    * HERO
    */
 
-  .hero .section-subtitle { letter-spacing: 10px; }
+  .hero .section-subtitle { letter-spacing: 0px; }
 
   .hero-banner-bg {
     display: block;
@@ -1086,7 +1086,7 @@ body::before {
    * HERO
    */
 
-  .hero { padding-block-start: 250px; }
+  .hero { padding-block-start: 80px; }
 
   .hero-banner-bg { transform: scale(1.2); }
 
