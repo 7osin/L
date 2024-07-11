@@ -11,12 +11,14 @@
   -->
   <title>HMD</title>
   <meta name="title" content="HMD">
-  <meta name="description" content="HMD is a live streaming platform">
-
+  <meta name="description" content="hmd profile">
+  <meta name="theme-color" content="#ff0000"/>
+  <meta property="og:title" content="hmd profile"/>
+  <meta property="og:image" content="https://cdn.discordapp.com/attachments/1191338107757416498/1260870554077102161/logo.png?ex=6690e4b5&is=668f9335&hm=dcc14b785b3541e9b495a699d885ccb135750b9def90d9744834ea2c7ef4e17a&"/>
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="./logo.png" type="image/png">
+  <link rel="shortcut icon" href="assets/images/logo.png" type="image/png">
 
   <!-- 
     - google font link
@@ -40,6 +42,38 @@
 
 </head>
 
+<body onclick="playAudio()">
+  <audio id="audioPlayer" src="/assets/images/ssgr.mp3"></audio>
+  
+
+  <script>
+      var audioPlayed = false; // متغير لتتبع تشغيل الصوت
+      var isMuted = false; // متغير لتتبع حالة الصوت
+
+      function playAudio() {
+          if (!audioPlayed) { // تشغيل الصوت إذا لم يتم تشغيله بعد
+              var audio = document.getElementById('audioPlayer');
+              audio.play();
+              audioPlayed = true; // تحديث المتغير للإشارة إلى أن الصوت تم تشغيله
+          }
+      }
+
+      function toggleMute(event) {
+          event.preventDefault(); // منع سلوك الافتراضي للرابط
+          var audio = document.getElementById('audioPlayer');
+          var muteButton = document.getElementById('mute-button');
+          
+          if (isMuted) { // إلغاء كتم الصوت إذا كانت الصوت مكتومة
+              audio.muted = false;
+              isMuted = false;
+              muteButton.innerText = 'Mute'; // تحديث نص الزر إلى 'Mute'
+          } else { // كتم الصوت إذا كانت الصوت غير مكتومة
+              audio.muted = true;
+              isMuted = true;
+              muteButton.innerText = 'Unmute'; // تحديث نص الزر إلى 'Unmute'
+          }
+      }
+  </script>
 <body id="top">
 
   <!-- 
