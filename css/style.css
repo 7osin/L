@@ -1108,3 +1108,93 @@ h3.my-profession {
   width:  center ; /* عرض العنصر */
 }
 
+/* ************************************************************************* */
+
+
+
+
+
+.container h1 {
+  padding: 60px 0;
+  color:  white;
+  font-size: 44px;
+  text-align: center;
+}
+.rom { 
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.col {
+  flex-basis: 50%;
+  min-width: 250px;
+}
+.feature-img {
+  width: 83%;
+  margin: auto;
+  position: relative;
+  border-radius: 6px;
+  overflow:hidden ;
+}
+.small-img-rom {
+  display: flex;
+  margin: 20px 0;
+  align-items: center;
+  border-radius: 6px;
+  overflow:hidden ;
+  width: 85%;
+  margin-left: 40px;
+}
+.small-img {
+  position:relative; ;
+}
+.small-img img {
+  width: 150px;
+}
+
+.small-img-rom p {
+margin-left: 20px;
+color: #707070;
+line-height: 22px;
+font-size: 15px;
+}
+.play-btn {
+  width: 60px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.small-img .play-btn {
+  width: 35px;
+}
+.vido-player {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.vido:focus {
+  outline: none;
+}
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 32px;
+  cursor: pointer;
+}
+
+p.pp1 {
+  font-size: 16px; /* حجم الخط */
+  font-weight: bold; /* يجعل الخط عريضاً */
+  line-height: 1.6; /* يحدد ارتفاع السطر */
+  color: #ff0000; /* لون النص */
+}
+
+
+/* ***************************************************************** */
