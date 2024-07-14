@@ -1123,3 +1123,13 @@ body::before {
   .footer .logo img { width: 205px; }
 
 }
+.card-text {
+  font-size: 19px;
+  color: #000000;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; /* يمكنك استخدام 700 للخط العريض */
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 20px;
+  }
+
