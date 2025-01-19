@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Clicker+Script&family=Lato:wght@300;400;700;900&family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 :root {
   --bg-black-900: #f2f2fc;
   --bg-black-100: #fdf9ff;
@@ -177,7 +187,7 @@ ul {
 
 /* Global CSS End */
 
-/* Aside Start */
+/* Aside  الجانبببببببببببببيييييييييييStart */
 .aside {
   width: 230px;
   height: 100%;
@@ -193,7 +203,12 @@ ul {
   background-color: #000000ef;
   border-right: 2px solid red;
   border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  box-shadow: 0 0 1px red, 0 0 25px red,
+    0 0 40px red;
+
 }
+
 
 .aside .logo {
   position: absolute;
@@ -1197,4 +1212,69 @@ p.pp1 {
 }
 
 
-/* ***************************************************************** */
+/* ************************************اللودنق ***************************** */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* خلفية شبه شفافة */
+  backdrop-filter: blur(2px); /* تأثير التمويه */
+  display: flex;
+  align-items: center; /* محاذاة عمودية للصورة */
+  justify-content: center; /* محاذاة أفقية للصورة */
+  z-index: 9999; /* ضمان ظهور الشاشة فوق جميع العناصر */
+}
+
+#loading-image {
+  width: 150px;
+  height: 150px;
+  animation: spin-zoom 2s linear infinite;
+  border: 5px solid red;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+}
+
+@keyframes spin-zoom {
+  0% {
+    transform: rotate(0deg) scale(1); /* الوضع الأساسي */
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2); /* دوران وتكبير */
+  }
+  100% {
+    transform: rotate(360deg) scale(1); /* العودة للوضع الأساسي */
+  }
+}
+
+/* ************************************اللودنق ***************************** */
+
+/* ************************************الصوره بالزاويه  ***************************** */
+
+/* تحديد حجم الصورة */
+.logo img {
+  width: 150px;
+  height: auto;
+  animation: blinkEffect 2s infinite ease-in-out; /* تنفيذ الأنميشن */
+}
+
+/* تعريف الأنميشن */
+@keyframes blinkEffect {
+  0% {
+    opacity: 2; /* الصورة تكون مرئية بالكامل */
+  }
+  50% {
+    opacity: 0; /* الصورة تصبح شفافة */
+  }
+  100% {
+    opacity: 1; /* الصورة تعود إلى حالتها الطبيعية */
+  }
+}
+
+.logo img:hover {
+  animation: none; /* إيقاف الأنميشن عند مرور الماوس */
+  transform: scale(1.1); /* تكبير الصورة */
+  opacity: 1; /* التأكد من أن الصورة واضحة */
+}
+
