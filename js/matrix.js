@@ -2,9 +2,9 @@
 const canvas = document.getElementById("matrixCanvas");
 const ctx = canvas.getContext("2d");
 
-// Set the width and height of the canvas
-const canvasWidth = window.innerWidth;
-const canvasHeight = window.innerHeight;
+// Initialize canvas dimensions
+let canvasWidth = window.innerWidth;
+let canvasHeight = window.innerHeight;
 canvas.width = canvasWidth;
 canvas.height = canvasHeight;
 
@@ -29,13 +29,16 @@ const characters = [
 ];
 
 // Create an array of columns
-const columns = Math.floor(canvasWidth / 20);
+let columns = Math.floor(canvasWidth / 20);
 
 // Initialize the y positions of the columns
-const yPositions = [];
+let yPositions = [];
 
-for (let i = 0; i < columns; i++) {
-  yPositions[i] = Math.random() * canvasHeight;
+function initializeColumns() {
+  yPositions = [];
+  for (let i = 0; i < columns; i++) {
+    yPositions[i] = Math.random() * canvasHeight;
+  }
 }
 
 // Update the matrix animation
@@ -75,5 +78,18 @@ function renderMatrix() {
   updateMatrix();
 }
 
-// Start the animation
+// Handle window resize
+window.addEventListener("resize", () => {
+  canvasWidth = window.innerWidth;
+  canvasHeight = window.innerHeight;
+  canvas.width = canvasWidth;
+  canvas.height = canvasHeight;
+
+  // Recalculate columns and positions
+  columns = Math.floor(canvasWidth / 20);
+  initializeColumns();
+});
+
+// Initialize and start animation
+initializeColumns();
 renderMatrix();
