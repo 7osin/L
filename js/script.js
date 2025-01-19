@@ -1,3 +1,10 @@
+window.addEventListener("load", function () {
+  setTimeout(() => {
+    document.getElementById("loading-screen").style.display = "none";
+    document.getElementById("main-content").style.display = "block";
+  }, 5000); // 5 ثواني
+});
+
 var typed = new Typed(".typing", {
   strings: ["Programmer", "Cybersecurity", "Scripter"],
   typeSpeed: 100,
@@ -73,3 +80,6 @@ function asideSectionTogglerBtn() {
   aside.classList.toggle("open");
   navTogglerBtn.classList.toggle("open");
 }
+
+
+
