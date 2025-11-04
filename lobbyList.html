@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KaMa - عرض صور اللوبي</title>
+  <link rel="icon" type="image/x-icon" href="images/wick.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Cairo", sans-serif;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    canvas#matrixCanvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      background: #000;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff3c3c;
+      font-size: 2rem;
+      margin-top: 60px;
+      text-shadow: 0 0 10px #ff0000;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 20px;
+    }
+
+    .gallery-item {
+      background: rgba(20, 20, 20, 0.85);
+      border-radius: 15px;
+      padding: 10px;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+      transition: 0.3s ease;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .gallery-item p {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #bbb;
+    }
+
+    /* نافذة تكبير الصورة */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* زر الرجوع */
+    .back-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #ff0000;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+      transition: 0.3s;
+    }
+    .back-btn:hover {
+      background: #cc0000;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="dark">
+
+  <canvas id="matrixCanvas"></canvas>
+
+  <button class="back-btn" onclick="window.location.href='index.html'">
+    <i class="fa fa-arrow-left"></i> رجوع
+  </button>
+
+  <h1>عرض صور اللوبي</h1>
+
+  <div class="gallery">
+    <div class="gallery-item"><img src="lobbyList/Anniversary2023.png"><p>Anniversary2023</p></div>
+    <div class="gallery-item"><img src="lobbyList/Anniversary2024.png"><p>Anniversary2024</p></div>
+    <div class="gallery-item"><img src="lobbyList/CalamariV3.png"><p>CalamariV3</p></div>
+    <div class="gallery-item"><img src="lobbyList/CalamariV5.png"><p>CalamariV5</p></div>
+    <div class="gallery-item"><img src="lobbyList/CalamariV6.png"><p>CalamariV6</p></div>
+    <div class="gallery-item"><img src="lobbyList/ChocolateBoxKetchup.png"><p>ChocolateBoxKetchup</p></div>
+    <div class="gallery-item"><img src="lobbyList/DbdDay2025.png"><p>DbdDay2025</p></div>
+    <div class="gallery-item"><img src="lobbyList/EddieZodiac.png"><p>EddieZodiac</p></div>
+    <div class="gallery-item"><img src="lobbyList/Halloween2022.png"><p>Halloween2022</p></div>
+    <div class="gallery-item"><img src="lobbyList/Halloween2024.png"><p>Halloween2024</p></div>
+    <div class="gallery-item"><img src="lobbyList/Halloween2025.png"><p>Halloween2025</p></div>
+    <div class="gallery-item"><img src="lobbyList/Lunar2023.png"><p>Lunar2023</p></div>
+    <div class="gallery-item"><img src="lobbyList/Lunar2023Mini.png"><p>Lunar2023Mini</p></div>
+    <div class="gallery-item"><img src="lobbyList/Spring2024.png"><p>Spring2024</p></div>
+    <div class="gallery-item"><img src="lobbyList/Spring2025.png"><p>Spring2025</p></div>
+    <div class="gallery-item"><img src="lobbyList/Winter2022.png"><p>Winter2022</p></div>
+    <div class="gallery-item"><img src="lobbyList/Winter2023.png"><p>Winter2023</p></div>
+    <div class="gallery-item"><img src="lobbyList/Winter2024.png"><p>Winter2024</p></div>
+  </div>
+
+  <!-- نافذة عرض الصورة المكبرة -->
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="">
+  </div>
+
+  <script>
+    // تأثير matrix الخلفية
+    const canvas = document.getElementById("matrixCanvas");
+    const ctx = canvas.getContext("2d");
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    const letters = "01KaMa";
+    const drops = Array(Math.floor(canvas.width / 15)).fill(1);
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#ff0000";
+      ctx.font = "15px monospace";
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * 15, drops[i] * 15);
+        if (drops[i] * 15 > canvas.height && Math.random() > 0.95) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+    setInterval(draw, 35);
+
+    // عرض الصور المكبرة
+    const lightbox = document.getElementById("lightbox");
+    const imgs = document.querySelectorAll(".gallery-item img");
+    imgs.forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.classList.add("active");
+        lightbox.querySelector("img").src = img.src;
+      });
+    });
+    lightbox.addEventListener("click", () => {
+      lightbox.classList.remove("active");
+    });
+  </script>
+
+</body>
+</html>
