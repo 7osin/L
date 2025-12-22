@@ -2,17 +2,16 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#ff0000"/>
-<meta property="og:title" content="Error"/>
-<meta property="og:description" content="Error"/>
-<meta property="og:image" content="https://cdn.discordapp.com/attachments/1191338107757416498/1233712323299115020/Blue_And_White_Modern_House_Cleaning_Service_Facebook_Cover.gif?ex=6679e5e3&is=66789463&hm=60de5d6ed2885de3ecba5a8eea4785650d94f0bd02e28de93affbbacd0d60360"/>
-<meta property="og:image:type" content="image/gif"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="630"/>
+  <meta name="theme-color" content="#ff0000"/>
+  <meta property="og:title" content="Error"/>
+  <meta property="og:description" content="Error"/>
+  <meta property="og:image" content="https://cdn.discordapp.com/attachments/1191338107757416498/1233712323299115020/Blue_And_White_Modern_House_Cleaning_Service_Facebook_Cover.gif"/>
+  <meta property="og:image:type" content="image/gif"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
   <meta name="description" content="Error">
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Error</title>
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css" />
@@ -23,319 +22,52 @@
   <link rel="stylesheet" href="css/style-switcher.css" />
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="images/wick.png" />
+
   <script>
-    // Title animation kept but now shows "Error"
+    // Title animation: shows "Error"
     var titles = ["E","Er","Err","Erro","Error","Erro","Err","Er","E"];
     var index = 0;
-  
     function changeTitle() {
       document.title = titles[index];
       index = (index + 1) % titles.length;
       setTimeout(changeTitle, 300);
     }
-  
     changeTitle();
-</script>
+  </script>
+  <style>
+    /* Minimal inline styles to center the message while keeping existing CSS available */
+    .fullscreen-error {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    .fullscreen-error h1 {
+      font-size: 4rem;
+      color: #ff4444;
+      margin: 0;
+      font-weight: 700;
+    }
+    @media (max-width: 600px) {
+      .fullscreen-error h1 { font-size: 2.5rem; }
+    }
+  </style>
 </head>
-
 <body class="dark">
   <canvas id="matrixCanvas"></canvas>
-  <!-- Matrix -->
-  <script src="/js/matrix.js"></script>
-  <!-- Main Container Start -->
+
   <div class="main-container">
-    <!-- Aside Start -->
-    <div class="aside">
-      <div class="logo">
-        <a href="index.html">
-          <img src="../images/wick.png" alt="Logo">
-        </a>
-      </div>
-      
-      <div class="nav-toggler">
-        <span></span>
-      </div>
-      <ul class="nav">
-        <li>
-          <a href="#home" class="active"><i class="fa fa-home"></i>Error</a>
-        </li>
-        <li>
-          <a href="#RESTKEY" ><i class="fa fa-user"></i> Error</a>
-        </li>
-        <li>
-          <a href="#education"><i class="fa fa-list"></i> Error</a>
-        </li>
-        <li>
-          <a href="#contact"> <i class="fa fa-comments"></i> Error</a>
-          <br>
-          <a href="#" onclick="toggleMute(event)"> <i class="fa fa-headphones"></i> Error</a>
-        </li>
-      </ul>
-    </div>
-    <!-- Aside End -->
-    <!-- Main Content Start -->
     <div class="main-content">
-      <!-- Home Section Start -->
-      <section class="home active section" id="home">
-        <div class="container">
-          <div class="row">
-            <div class="home-info padd-15">
-              <h3 class="hello"> 
-                Error
-              </h3>
-              <h3 class="my-profession">
-                Error
-              </h3>
-              
-              <p>Error</p>
-              <a href="https://discord.com/invite/9A3ESz4WeQ" class="btn">Error</a>
-            </div>
-            <div class="home-img padd-15">
-              <img src="images/wick.png" alt="hero" />
-            </div>
-          </div>
+      <section class="fullscreen-error" id="error-screen" aria-labelledby="error-title">
+        <div>
+          <h1 id="error-title">Error</h1>
         </div>
       </section>
-      <!-- Home Section End -->
-
-      <!-- About Section Start -->
-      <section class="about section" id="RESTKEY">
-        <div class="container">
-          <div class="row">
-            <div class="section-title padd-15">
-              <h2>Error</h2>
-            </div>
-          </div>
-          <div class="row">
-            <div class="about-content padd-15">
-              <div class="row">
-                <div class="about-text padd-15">
-                  <h3> <span>Error</span></h3>
-                  <p>Error</p>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="personal-info padd-15">
-                  <div class="row">
-                    <div class="info-item padd-15">
-                        <input class="iid" type="text" name="name" id="name" placeholder="Error">
-                    <div class="info-item padd-15">
-                    </div>
-                  </div>
-                    </div>
-                    <!--  Regular -->
-                    <div class="info-item padd-15">
-                      <p>
-                        <input type="radio" name="version" id="regular_version" value="Regular">
-                        <label for="regular_version">Error</label>
-                    </p>
-                    </div>
-      
-                    <!-- PRO TOOL -->
-                    <div class="info-item padd-15">
-                      <p>
-                        <input type="radio" name="version" id="pro_version" value="Pro">
-                        <label for="pro_version">Error</label>
-                    </p>
-                    </div>
-
-                  <!-- REST KEY -->
-                  <div class="row">
-                    <div class="buttons padd-15">
-                       <a href="#" class="btn" onclick="ResetKey()">Error</a>
-                       <div id="notification" class="notification">Error</div>
-                      <a href="https://f2kama.com" class="btn hire-me"> Error</a>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="skills padd-15">
-                  <div class="row">
-                    <div class="skills-item padd-15">
-                      <h5 id="users-title">Error</h5>
-                      <br>
-                      <iframe class="discord-iframe" src="https://discord.com/widget?id=897313981407039508&theme=dark"  allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-                      <h5>Error</h5>
-                      </div>
-                    </div>
-                   
-                    <div class="skills-item padd-15">
-                      <h5>Error</h5>
-                      <div class="progress">
-                        <div class="progress-in" style="width: 80%"></div>
-                        <div class="skill-percent">80%</div>
-                      </div>
-                    </div>
-                    <div class="skills-item padd-15">
-                      <h5>Error</h5>
-                      <div class="progress">
-                        <div class="progress-in" style="width: 90%"></div>
-                        <div class="skill-percent">90%</div>
-                      </div>
-                    </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- About Section End ----------------->
-      
-<!--                                             Audio section                                                 -->
-<body onclick="playAudio()">
-  <audio id="audioPlayer" src="images/VOCE.mp3"></audio>
-  
-  <ul>
-      <li>
-          <a href="mute.html" id="mute-button" onclick="toggleMute(event)">Error</a>
-      </li>
-  </ul>
-
-  <script>
-      var audioPlayed = false;
-      var isMuted = false;
-
-      function playAudio() {
-          if (!audioPlayed) {
-              var audio = document.getElementById('audioPlayer');
-              audio.play();
-              audioPlayed = true;
-          }
-      }
-
-      function toggleMute(event) {
-          event.preventDefault();
-          var audio = document.getElementById('audioPlayer');
-          var muteButton = document.getElementById('mute-button');
-          
-          if (isMuted) {
-              audio.muted = false;
-              isMuted = false;
-              muteButton.innerText = 'Error';
-          } else {
-              audio.muted = true;
-              isMuted = true;
-              muteButton.innerText = 'Error';
-          }
-      }
-  </script>
-
-      <!-- Educations & Experience Section Start ---------------------------------------------------->
-      <section class="education section" id="education">
-        <div class="container">
-          <div class="section-title padd-15">
-            <h2>Error</h2>
-          </div>
-            <h1>Error</h1>
-            <div class="rom">
-              <div class="col">
-              <div class="feature-img">
-              <img src="images/undd.png" width="100%" >
-           </div>
-          </div>
-
-           <div class="col"> 
-           <div class="small-img-rom">
-           <div class="small-img">
-           <img src="images/GIFPRO.gif">
-           <img src="images/play.png" class="play-btn"  onclick="playVideo('images/vid1.mp4')">
-           </div>
-           <div class="small-img">
-           <p class="pp1">Error</p>
-           <br><br><br><br>
-           <button class="btn" onclick="goToLink('https://server.nightmare.su/KAMA/KAMA.exe')">Error</button>
-          </div>
-           </div>
-
-          <div class="vido-player" id="videoPlayer">
-              <video  width="100%" controls id="myVideo">
-                  <source src="" type="video/mp4">
-              </video>
-              <img src="images/close.png" class="close-btn"  onclick="stopVideo()">
-          </div>
-          <script>
-              var videoPlayer = document.getElementById("videoPlayer");
-              var myVideo = document.getElementById("myVideo");
-          
-              function stopVideo() {
-                  myVideo.pause();
-                  videoPlayer.style.display = "none";
-              }
-          
-              function playVideo(file) {
-                  myVideo.src = file;
-                  videoPlayer.style.display = "block";
-                  myVideo.play();
-              }
-          </script>
-          <script>
-            function goToLink(url) {
-                window.location.href = url;
-            }
-          </script>
-      </section>
-      <!-- Educations & Experience Section End  ---------------------------------------------------------------->           
-
-      <!-- Contact Section Start -->
-      <section class="contact section" id="contact">
-        <div class="container">
-          <div class="row">
-            <div class="section-title padd-15">
-              <h2>Error</h2>
-            </div>
-          </div>
-          <h3 class="contact-title padd-15">Error</h3>
-          <h4 class="contact-sub-title padd-15">Error</h4>
-          <div class="row">
-            <div class="contact-info-item padd-15">
-              <i class='bx bxl-whatsapp'></i>
-              <h4>Error</h4>
-              <a href="https://api.whatsapp.com/send/?phone=966598989422" target="_blank">
-                <p>Error</p>
-              </a>
-            </div>
-
-            <div class="contact-info-item padd-15">
-              <i class='bx bxl-discord-alt' ></i>
-              <h4>Error</h4>
-              <a href="https://discord.com/invite/dlc" target="_blank">
-                <p>Error</p>
-              </a>
-            </div>
-
-            <div class="contact-info-item padd-15">
-              <i class='bx bxl-telegram' ></i>
-              <h4>Error</h4>
-              <a href="https://t.me/h3ck1" target="_blank">
-                <p>Error</p>
-              </a>
-            </div>
-
-             <div class="contact-info-item padd-15">
-              <i class='bx bx-git-repo-forked' ></i>
-              <h4>Error</h4>
-              <a href="https://f2kama.com" target="_blank">
-                <p>Error</p>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Contact Section End -->
-    <!-- Main Content End -->
+    </div>
   </div>
-  <!-- Main Container End -->
-  <!-- Custom JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"
-    referrerpolicy="no-referrer"></script>
-  <script src="js/script.js"></script>
-  <script src="js/hwid.js"></script>
-</body>
 
+  <!-- Keep no links in the file. No external scripts that may inject links included. -->
+</body>
 </html>
